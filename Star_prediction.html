@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Star_prediction</title>
+	<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<style>
+.text-js{
+  opacity: 0;
+}
+/*.cursor{
+  display: block;
+  position: relative;
+  height: 30px;
+  top: 0;
+  right: -5px;
+  width: 2px;
+   Change colour of Cursor Here 
+  background-color: black;
+  z-index: 1;
+  animation: flash 0.5s none infinite alternate;
+}*/
+@keyframes flash{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+html{
+  scroll-behavior: smooth;
+  transition: 1s ease-in-out;
+}
+button{
+	height: 40px;
+	width: 100px;
+	border-radius: 50px;
+	border: 2px solid black;
+	color: black;
+	background-color: rgba(0,0,0,0.4);
+}
+.text-js{
+	color: yellow;
+	font-size: 30px;
+	overflow: hidden; 
+}
+ ::placeholder{
+    color: black;
+    font-size: 17px;
+  }
+input[type=text]{
+        height: 40px;
+        width: 60%;
+        border-radius: 10px;
+        background-color: white;
+        transition: none;
+        color: black;
+        border: 3px solid rgb(35,219,219);
+        text-decoration: none;
+        outline: none;
+        padding-left: 30px;
+     }
+     input[type=email]{
+        height: 40px;
+        width: 60%;
+        background-color: white;
+        transition: none;
+        color: black;
+        border-radius: 10px;
+        border: 3px solid rgb(35,219,219);
+        text-decoration: none;
+        outline: none;
+        padding-left: 30px;
+     }
+      input[type=password]{
+        height: 40px;
+        width: 60%;
+        padding-left: 30px;
+        background-color: white;
+        transition: none;
+        color: black;
+        border-radius: 10px;
+        border: 3px solid rgb(35,219,219);
+        text-decoration: none;
+        outline: none;
+     }
+     input[type=date]{
+        height: 40px;
+        width: 60%;
+        padding-left: 30px;
+        background-color: white;
+        transition: none;
+        color: black;
+        border-radius: 10px;
+        border: 3px solid rgb(35,219,219);
+        text-decoration: none;
+        outline: none;
+     }
+     input[type=number]{
+        height: 40px;
+        width: 60%;
+        padding-left: 30px;
+        background-color: white;
+        transition: none;
+        color: black;
+        border-radius: 10px;
+        border: 3px solid rgb(35,219,219);
+        text-decoration: none;
+        outline: none;
+     }
+     input[type=time]{
+        height: 40px;
+        width: 60%;
+        padding-left: 30px;
+        background-color: white;
+        transition: none;
+        color: black;
+        border-radius: 10px;
+        border: 3px solid rgb(35,219,219);
+        text-decoration: none;
+        outline: none;
+     }
+     select{
+      height: 40px;
+        width: 60%;
+        padding-left: 30px;
+        background-color: white;
+        transition: none;
+        color: black;
+        font-size: 17px;
+        border-radius: 10px;
+        border: 3px solid rgb(35,219,219);
+        text-decoration: none;
+        outline: none;
+     }
+     input[type=submit]{
+        height: 10px;
+        width: 60%;
+        background-color: black;
+        transition: none;
+        color:white;
+        border-radius: 40px;
+        text-decoration: none;
+        outline: none;
+     }
+     h3{
+      color: white;
+     }
+     .plot{
+   text-shadow: 2px 2px white;
+   letter-spacing: 3px;
+}
+h1{
+  transition: 0.5s ease-in-out;
+}
+h1:hover{
+    font-size: 50px;
+    transition: 0.5s ease-in-out;
+}
+img{
+  height: 300px;
+  width: 100%;
+  transition: 1s ease-in-out;
+  }
+/*img:hover{
+  height: 340px;
+  width: 100%;
+  transition: 1s ease-in-out;
+}*/
+#predict{
+  animation: pr 3s linear infinite;
+}
+@keyframes pr{
+  0%{
+    background-color: black;
+    color: white;
+  }
+  50%{
+    background-color: rgb(35,219,219);
+    color: black;
+  }
+  100%{
+    background-color: black;
+    color: white;
+  }
+  50%{
+    background-color: rgb(35,219,219);
+    color: black;
+  }
+  0%{
+    background-color: black;
+    color: white;
+  }
+}
+h3{
+  color: rgb(35,219,219);
+}
+h4{
+  color: white;
+}
+</style>
+<body style="background-image: url(https://starabhiroop.s3.ap-south-1.amazonaws.com/predict.png); background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+    <div class="row" style="background-color: black;">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="left" style="padding-top: 6px;padding-left: 50px;">
+                <img src="https://starabhiroop.s3.ap-south-1.amazonaws.com/logo1.png" style="height: 70px;width: 90px;">
+              </div>
+    </div>
+    <nav class="navbar navbar-inverse ">
+        <div class="container-fluid">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><b style="color:white">Discover Us:</b></a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#"><b>Profile</b></a></li>
+          <li><a href="#"><b>Customer Segmentation</b></a></li>
+          <li><a href="#section1" id="predict"><b>Prediction</b></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<div id="section1">
+  <div class="container">
+    <div class="row">
+      <div style="padding: 1%;padding-bottom: 3%;">
+                    <h2 align="center" class="plot" style="color: white;box-shadow: black;" data-aos="zoom-in-right"><b>Enter the Details</b></h2>
+                </div>
+                <form id="Frm" action="prediction">
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                  <div align="center">
+                    <input type="text" name="date" placeholder="Date (yyyy-mm-dd)" required data-aos="fade-right">
+                  </div><br>
+                  <div align="center">
+                          <input type="text" name="exam" placeholder="Proximity to exam" required data-aos="fade-left">
+                  </div> <br>
+                  <div align="center">
+                        <input type="text" name="dept" placeholder="Department" required data-aos="fade-right">
+                  </div><br>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                  <div align="center">
+                        <input type="text" name="time" placeholder="Time (hh:mm)" required data-aos="fade-left">
+                  </div><br>
+                  <div align="center">
+                          <input type="text" name="subject" placeholder="Subject" required data-aos="fade-right">
+                  </div> <br>
+                  <div align="center">
+                        <input type="text" name="sec" placeholder="Section" required data-aos="fade-left">
+                  </div><br>
+            </div>
+                <div align="center" style="padding-bottom: 20px;padding-top: 1px;">
+                  <input type="submit" value="Predict" style="height: 40px;width: 120px;border: 3px solid white;"></a>
+              </div>
+                </form>
+              </div>
+              </div>
+        </div>
+        <div>
+        <div class="container">
+          <div class="container">
+            <div class="container">
+        <div align="center" style="padding-bottom: 5%;padding-top: 5%;background-color: rgba(0,0,0,0.7);" data-aos="flip-up;">
+          <h3>Attendance for <b style="color: white;">{{date}}</b> is <b style="color: white;">{{prediction}}</b> with <b style="color: white;">{{accuracy}}</b>% accuracy.</b></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+              <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

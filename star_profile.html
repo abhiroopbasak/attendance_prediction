@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Star_profile</title>
+	<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<style>
+.text-js{
+  opacity: 0;
+}
+/*.cursor{
+  display: block;
+  position: relative;
+  height: 30px;
+  top: 0;
+  right: -5px;
+  width: 2px;
+   Change colour of Cursor Here 
+  background-color: black;
+  z-index: 1;
+  animation: flash 0.5s none infinite alternate;
+}*/
+@keyframes flash{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+html{
+  scroll-behavior: smooth;
+  transition: 1s ease-in-out;
+}
+button{
+	height: 40px;
+	width: 100px;
+	border-radius: 50px;
+	border: 2px solid black;
+	color: black;
+	background-color: rgba(0,0,0,0.4);
+}
+.text-js{
+	color: yellow;
+	font-size: 30px;
+	overflow: hidden; 
+}
+ ::placeholder{
+    color: black;
+    font-size: 17px;
+  }
+input[type=text]{
+        height: 40px;
+        width: 60%;
+        border-radius: 10px;
+        background-color: white;
+        transition: none;
+        color: black;
+        border: 3px solid rgb(35,219,219);
+        text-decoration: none;
+        outline: none;
+        padding-left: 30px;
+     }
+     input[type=email]{
+        height: 40px;
+        width: 60%;
+        background-color: white;
+        transition: none;
+        color: black;
+        border-radius: 10px;
+        border: 3px solid rgb(35,219,219);
+        text-decoration: none;
+        outline: none;
+        padding-left: 30px;
+     }
+      input[type=password]{
+        height: 40px;
+        width: 60%;
+        padding-left: 30px;
+        background-color: white;
+        transition: none;
+        color: black;
+        border-radius: 10px;
+        border: 3px solid rgb(35,219,219);
+        text-decoration: none;
+        outline: none;
+     }
+     input[type=date]{
+        height: 40px;
+        width: 60%;
+        padding-left: 30px;
+        background-color: white;
+        transition: none;
+        color: black;
+        border-radius: 10px;
+        border: 3px solid rgb(35,219,219);
+        text-decoration: none;
+        outline: none;
+     }
+     input[type=number]{
+        height: 40px;
+        width: 60%;
+        padding-left: 30px;
+        background-color: white;
+        transition: none;
+        color: black;
+        border-radius: 10px;
+        border: 3px solid rgb(35,219,219);
+        text-decoration: none;
+        outline: none;
+     }
+     input[type=time]{
+        height: 40px;
+        width: 60%;
+        padding-left: 30px;
+        background-color: white;
+        transition: none;
+        color: black;
+        border-radius: 10px;
+        border: 3px solid rgb(35,219,219);
+        text-decoration: none;
+        outline: none;
+     }
+     select{
+      height: 40px;
+        width: 60%;
+        padding-left: 30px;
+        background-color: white;
+        transition: none;
+        color: black;
+        font-size: 17px;
+        border-radius: 10px;
+        border: 3px solid rgb(35,219,219);
+        text-decoration: none;
+        outline: none;
+     }
+     input[type=submit]{
+        height: 10px;
+        width: 60%;
+        background-color: black;
+        transition: none;
+        color:white;
+        border-radius: 40px;
+        text-decoration: none;
+        outline: none;
+     }
+     h3{
+      color: white;
+     }
+     .plot{
+   text-shadow: 2px 2px white;
+   letter-spacing: 3px;
+}
+h1{
+  transition: 0.5s ease-in-out;
+}
+h1:hover{
+    font-size: 50px;
+    transition: 0.5s ease-in-out;
+}
+img{
+  height: 300px;
+  width: 100%;
+  transition: 1s ease-in-out;
+  }
+/*img:hover{
+  height: 340px;
+  width: 100%;
+  transition: 1s ease-in-out;
+}*/
+#predict{
+  animation: pr 3s linear infinite;
+}
+@keyframes pr{
+  0%{
+    background-color: black;
+    color: white;
+  }
+  50%{
+    background-color: rgb(35,219,219);
+    color: black;
+  }
+  100%{
+    background-color: black;
+    color: white;
+  }
+  50%{
+    background-color: rgb(35,219,219);
+    color: black;
+  }
+  0%{
+    background-color: black;
+    color: white;
+  }
+}
+</style>
+<body style="background-image: url(https://starabhiroop.s3.ap-south-1.amazonaws.com/form+page.png); background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+    <div class="row" style="background-color: black;">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="left" style="padding-top: 6px;padding-left: 50px;">
+                <img src="https://starabhiroop.s3.ap-south-1.amazonaws.com/logo1.png" style="height: 70px;width: 90px;">
+              </div>
+    </div>
+    <nav class="navbar navbar-inverse ">
+        <div class="container-fluid">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><b style="color:white">Discover Us:</b></a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#section1"><b>Profile</b></a></li>
+          <li><a href="#section2"><b>Customer Segmentation</b></a></li>
+          <li><a href="predict" id="predict"><b>Prediction</b></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<div id="section1">
+    <div class="container">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center" style="background-color: rgba(0,0,0,0.4);padding-bottom: 30px;border: 2px solid white;" data-aos="fade-down">
+                <h1><i><b style="color: yellow;">WELCOME</b></i></h1>
+                <table>
+                  <tr>
+                    <td><h3>NAME  </h3></td>
+                    <td><h3>:&nbsp;&nbsp;{{name}}</h3></td>
+                  </tr>
+                  <tr>
+                    <td><h3>COLLEGE NAME &nbsp;&nbsp;</h3></td>
+                    <td><h3>:&nbsp;&nbsp;{{cname}}</h3></td>
+                  </tr>
+                </table>
+        <!-- <div align="center">
+            <button id="some-button">button</button>
+        </div> -->
+       </div>
+    </div>
+    <div class="row">
+      <div style="padding: 5%;">
+                    <h2 align="center" class="plot" style="color: white;padding-top: 20px;box-shadow: black;" data-aos="zoom-in-right"><b>Enter the Details</b></h2>
+                </div>
+              <form id="Frm" action="fillup">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div align="center">
+                    <input type="text" name="date" placeholder="Date (yyyy-mm-dd)" required data-aos="fade-right">
+                  </div><br>
+                  <div align="center">
+                        <input type="text" name="time" placeholder="Time (hh:mm)" required data-aos="fade-left">
+                  </div><br>
+                  <div align="center">
+                        <input type="text" name="male" placeholder="Male Students" required data-aos="fade-right">
+                  </div><br>
+                  <div align="center">
+                        <input type="text" name="female"placeholder="Female Students" required data-aos="fade-left">
+                  </div><br>
+                  <div align="center">
+                        <input type="text" name="teacher" placeholder="Teacher" required data-aos="fade-right">
+                  </div><br>
+                  <div align="center">
+                        <input type="text" name="subject" placeholder="Subject" required data-aos="fade-left">
+                  </div><br>
+            </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div align="center">
+                        <input type="text" name="dept" placeholder="Department" required data-aos="fade-left">
+                  </div><br>
+                 <div align="center">
+                        <input type="text" name="sec" placeholder="Section" required data-aos="fade-right">
+                  </div><br>
+                  <div align="center">
+                         <input type="text" name="sem" placeholder="Semester" required data-aos="fade-left">
+                  </div><br>
+                   <div align="center">
+                          <input type="text" name="exam" placeholder="Proximity to exam" required data-aos="fade-right">
+                  </div> <br>
+                  <div align="center">
+                         <input type="text" name="dl10" placeholder="Distance less than 10 km" required data-aos="fade-left">
+                  </div><br>
+                  <div align="center">
+                          <input type="text" name="dm10" placeholder="Distance greater than 10 km" required data-aos="fade-right">
+                  </div> <br>
+                </div>
+                <div align="center">
+                         <input class="attendance" style="height: 40px;width: 50%;" name="attendance" type="text" placeholder="Attendance" required data-aos="fade-left">
+                  </div><br>
+                <div align="center" style="padding-bottom: 20px;">
+                  <input type="submit" style="height: 40px;width: 120px;border: 3px solid white;"></a>
+              </div>
+                </form>
+              </div>
+              </div>
+
+<div id="section2">
+  <div class="container">
+    <div class="row">
+      <div style="padding: 4%;">
+                    <h2 align="center" class="plot" style="color: white;padding-top: 20px;box-shadow: black;" data-aos="zoom-in-right"><b>Customer Segmentation</b></h2>
+                </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div style="padding-top: 15px;padding-left: 15px;padding-right: 15px; padding-bottom: 15px; background-color: rgba(0,0,0,0.4); border: 3px solid rgba(35,219,219); border-radius: 10px;">
+                  <img src="https://starabhiroop.s3.ap-south-1.amazonaws.com/plot1.jpeg" data-enlargeable width="100" style="cursor: zoom-in;border: 5px solid rgb(35,219,219);border-radius: 10px;transition: 0.5s ease-in-out;" data-aos="fade-right">
+                  <h3 align="center">Histogram Attendance</h3>
+                </div>
+             </div>
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+              <div style="padding-top: 15px;padding-left: 15px;padding-right: 15px; padding-bottom: 15px; background-color: rgba(0,0,0,0.4); border: 3px solid rgba(35,219,219); border-radius: 10px;">
+                  <img src="https://starabhiroop.s3.ap-south-1.amazonaws.com/plot1.jpeg" data-enlargeable width="100" style="cursor: zoom-in; border: 5px solid rgb(35,219,219);border-radius: 10px;transition: 0.5s ease-in-out;" data-aos="fade-down">
+                  <h3 align="center">Histogram Humidity</h3>
+                </div>
+             </div>
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+              <div style="padding-top: 15px;padding-left: 15px;padding-right: 15px; padding-bottom: 15px; background-color: rgba(0,0,0,0.4); border: 3px solid rgba(35,219,219); border-radius: 10px;">
+                  <img src="https://starabhiroop.s3.ap-south-1.amazonaws.com/plot1.jpeg" data-enlargeable width="100" style="cursor: zoom-in; border: 5px solid rgb(35,219,219);border-radius: 10px;transition: 0.5s ease-in-out;" data-aos="fade-left">
+                  <h3 align="center">Histogram Temperature</h3>
+                </div>
+             </div>
+           </div>
+           <div style="padding: 4%;">
+                    
+                </div>
+           <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div style="padding-top: 15px;padding-left: 15px;padding-right: 15px; padding-bottom: 15px; background-color: rgba(0,0,0,0.4); border: 3px solid rgba(35,219,219); border-radius: 10px;">
+                  <img src="https://starabhiroop.s3.ap-south-1.amazonaws.com/plot1.jpeg" data-enlargeable width="100" style="cursor: zoom-in; border: 5px solid rgb(35,219,219);border-radius: 10px;transition: 0.5s ease-in-out;" data-aos="fade-right">
+                  <h3 align="center">Count Plot 1</h3>
+                </div>
+             </div>
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                  <div style="padding-top: 15px;padding-left: 15px;padding-right: 15px; padding-bottom: 15px; background-color: rgba(0,0,0,0.4); border: 3px solid rgba(35,219,219); border-radius: 10px;">
+                  <img src="https://starabhiroop.s3.ap-south-1.amazonaws.com/plot1.jpeg" data-enlargeable width="100" style="cursor: zoom-in; border: 5px solid rgb(35,219,219);border-radius: 10px;transition: 0.5s ease-in-out;" data-aos="fade-up">
+                  <h3 align="center">Count Plot 1</h3>
+                </div>
+             </div>
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                  <div style="padding-top: 15px;padding-left: 15px;padding-right: 15px; padding-bottom: 15px; background-color: rgba(0,0,0,0.4); border: 3px solid rgba(35,219,219); border-radius: 10px;">
+                  <img src="https://starabhiroop.s3.ap-south-1.amazonaws.com/plot1.jpeg" data-enlargeable width="100" style="cursor: zoom-in; border: 5px solid rgb(35,219,219);border-radius: 10px;transition: 0.5s ease-in-out;" data-aos="fade-left">
+                  <h3 align="center">Count Plot 1</h3>
+                </div>
+             </div>
+           </div>
+           <div style="padding: 4%;">
+                    
+              </div>
+           <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                  <div style="padding-top: 15px;padding-left: 15px;padding-right: 15px; padding-bottom: 15px; background-color: rgba(0,0,0,0.4); border: 3px solid rgba(35,219,219); border-radius: 10px;">
+                  <img src="https://starabhiroop.s3.ap-south-1.amazonaws.com/plot1.jpeg" data-enlargeable width="100" style="cursor: zoom-in; border: 5px solid rgb(35,219,219);border-radius: 10px;transition: 0.5s ease-in-out;" data-aos="fade-right">
+                  <h3 align="center">BoxPlot 1</h3>
+                </div>
+             </div>
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                  <div style="padding-top: 15px;padding-left: 15px;padding-right: 15px; padding-bottom: 15px; background-color: rgba(0,0,0,0.4); border: 3px solid rgba(35,219,219); border-radius: 10px;">
+                  <img src="https://starabhiroop.s3.ap-south-1.amazonaws.com/plot1.jpeg" data-enlargeable width="100"style="cursor: zoom-in; border: 5px solid rgb(35,219,219);border-radius: 10px;transition: 0.5s ease-in-out;" data-aos="fade-up">
+                  <h3 align="center">BoxPlot 2</h3>
+                </div>
+             </div>
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                  <div style="padding-top: 15px;padding-left: 15px;padding-right: 15px; padding-bottom: 15px; background-color: rgba(0,0,0,0.4); border: 3px solid rgba(35,219,219); border-radius: 10px;">
+                  <img src="https://starabhiroop.s3.ap-south-1.amazonaws.com/plot1.jpeg" data-enlargeable width="100" style="cursor: zoom-in; border: 5px solid rgb(35,219,219);border-radius: 10px;transition: 0.5s ease-in-out;" data-aos="fade-left">
+                  <h3 align="center">BoxPlot 3</h3>
+                </div>
+             </div>
+           </div>
+         </div>
+       
+       <div style="padding: 4%;">    
+              </div>
+              <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                  
+             </div>
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                  <div style="padding-top: 15px;padding-left: 15px;padding-right: 15px; padding-bottom: 15px; background-color: rgba(0,0,0,0.4); border: 3px solid rgba(35,219,219); border-radius: 10px;">
+                  <img src="https://starabhiroop.s3.ap-south-1.amazonaws.com/plot1.jpeg" data-enlargeable width="100"style="cursor: zoom-in; border: 5px solid rgb(35,219,219);border-radius: 10px;transition: 0.5s ease-in-out;" data-aos="fade-down">
+                  <h3 align="center">Heatmap Plot 1</h3>
+                </div>
+             </div>
+            </div>
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                  
+             </div>
+           </div>
+         </div>
+
+       <div style="padding: 4%;">    
+              </div>
+              <script >
+              $('img[data-enlargeable]').addClass('img-enlargeable').click(function(){
+               var src = $(this).attr('src');
+               var modal;
+     function removeModal(){ modal.remove(); $('body').off('keyup.modal-close'); }
+    modal = $('<div>').css({
+        background: 'RGBA(0,0,0,0.7) url('+src+') no-repeat center',
+        backgroundSize: 'contain',
+        width:'100%', height:'100%',
+        position:'fixed',
+        zIndex:'10000',
+        top:'0', left:'0',
+        cursor: 'zoom-out'
+    }).click(function(){
+        removeModal();
+    }).appendTo('body');
+    //handling ESC
+    $('body').on('keyup.modal-close', function(e){
+      if(e.key==='Escape'){ removeModal(); } 
+    });
+});
+          </script>
+              <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
